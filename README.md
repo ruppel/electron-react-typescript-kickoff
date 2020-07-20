@@ -39,17 +39,17 @@ I won't give an explanation.
 You should have installed
 
 - npm
+  - Use the installer given at https://nodejs.org/en/download/
 - yarn
-- create-react-app
-
-Perhaps there is more,... I don't remember. Give me a hint using issues.
+  - Use an installation method given at https://classic.yarnpkg.com/en/docs/install
+  - On my mac I've done a `curl -o- -L https://yarnpkg.com/install.sh | bash`
 
 ## Steps
 
 ### Create React/Typescript project
 
 ```
-$ npx create-react-app name-of-my-project --typescript
+$ yarn create react-app name-of-my-project --template typescript
 $ cd name-of-my-project
 ```
 
@@ -187,7 +187,7 @@ to this:
 Add the following to the `"scripts"` tag:
 
 ```
-"electron-dev": "concurrently \"cross-env BROWSER=none yarn start\" \"wait-on http://localhost:3000 && electron .\""
+"electron-dev": "concurrently \"cross-env BROWSER=none yarn start\" \"wait-on http://localhost:3000 && electron .\"",
 "postinstall": "electron-builder install-app-deps",
 "preelectron-pack": "yarn build",
 "electron-pack": "electron-builder build -mw",
